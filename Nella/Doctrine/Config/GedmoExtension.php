@@ -12,8 +12,8 @@ namespace Nella\Doctrine\Config;
 
 use Doctrine\Common\Persistence\ObjectManager,
 	Doctrine\Common\EventSubscriber,
-	Nette\Config\Configurator,
-	Nette\Config\Compiler,
+	Nette\Configurator,
+	Nette\DI\Compiler,
 	Nette\Utils\Strings;
 
 /**
@@ -21,7 +21,7 @@ use Doctrine\Common\Persistence\ObjectManager,
  *
  * @author	Patrik Votoček
  */
-class GedmoExtension extends \Nette\Config\CompilerExtension
+class GedmoExtension extends \Nette\DI\CompilerExtension
 {
 	const DEFAULT_EXTENSION_NAME = 'gedmo';
 
@@ -323,7 +323,7 @@ class GedmoExtension extends \Nette\Config\CompilerExtension
 	/**
 	 * Register extension to compiler.
 	 *
-	 * @param \Nette\Config\Configurator
+	 * @param \Nette\Configurator
 	 * @param string
 	 */
 	public static function register(Configurator $configurator, $name = self::DEFAULT_EXTENSION_NAME)
