@@ -183,9 +183,9 @@ class GedmoExtension extends \Nette\DI\CompilerExtension
 	}
 
 	/**
-	 * @param \Nette\Utils\PhpGenerator\ClassType
+	 * @param \Nette\PhpGenerator\ClassType
 	 */
-	public function afterCompile(\Nette\Utils\PhpGenerator\ClassType $class)
+	public function afterCompile(\Nette\PhpGenerator\ClassType $class)
 	{
 		$initialize = $class->methods['initialize'];
 		$initialize->addBody('\Gedmo\DoctrineExtensions::registerAnnotations();');
